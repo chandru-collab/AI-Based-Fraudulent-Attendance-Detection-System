@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+cryptography
+pyjwt
+python-multipart
+pandas
+numpy
+scikit-learn
+xgboost
+mediapipe
+python-dotenv
+bcrypt
+firebase-admin
+reportlab
+email-validator

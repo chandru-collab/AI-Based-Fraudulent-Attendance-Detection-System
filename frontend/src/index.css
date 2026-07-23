@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-dark-100 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(115, 117, 255, 0.08) 0, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(78, 76, 255, 0.05) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.04) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom premium styles */
+.glass {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover:hover {
+  background: rgba(17, 24, 39, 0.85);
+  border-color: rgba(115, 117, 255, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(115, 117, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-rose-400;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-medium py-2.5 px-4 rounded-xl transition-all duration-300 shadow-glow hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none active:scale-95;
+}
+
+.input-primary {
+  @apply bg-dark-900 border border-dark-800 text-white rounded-xl py-2.5 px-4 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all duration-200 placeholder-dark-500;
+}
+
+/* Custom Webkit scrollbar for premium look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(115, 117, 255, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(115, 117, 255, 0.4);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(115, 117, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(115, 117, 255, 0.7);
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-danger {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(244, 63, 94, 0.7);
+  }
+}
+
+.animate-danger-glow {
+  animation: pulse-danger 1.5s infinite;
+}
